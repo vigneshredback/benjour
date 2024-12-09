@@ -1,0 +1,32 @@
+{% extends 'base/base.html' %}
+
+{% block title %} Home {% endblock title %}
+
+{% block content %}
+<div class="container mt-5 mb-5 mx-2 text-center">
+    {% for item in journals %}
+    <section class="journal-intro">
+        <div class="container py-5">
+            <h1 class="text-center">{{item.title}}</h1>
+            <p class="text-center mt-3">
+                Welcome to the <strong>International Journal of Knowledge Exploration in Computational Intelligence (IJKCI)</strong>, a leading platform for scholarly research and innovation in computational intelligence. Our journal is committed to publishing high-quality, peer-reviewed articles that explore cutting-edge advancements in areas like machine learning, neural networks, data mining, evolutionary algorithms, and their practical applications across various industries.
+            </p>
+            <div class="features mt-4">
+                <h2 class="text-center">Why Choose IJKCI?</h2>
+                <ul class="list-unstyled text-center mt-3">
+                    <li>✔ Peer-reviewed multidisciplinary research</li>
+                    <li>✔ Focus on innovation in computational intelligence</li>
+                    <li>✔ Interdisciplinary applications in fields like healthcare, robotics, and finance</li>
+                    <li>✔ Global collaboration and knowledge sharing</li>
+                </ul>
+            </div>
+            <div class="text-center mt-4">
+                <a href="{% url 'papers' item.id %}" class="btn btn-primary btn-lg">View papers</a>
+            </div>
+        </div>
+    </section>
+    {% endfor %}
+</div>
+{% endblock content %}
+
+{% block script %} {% endblock script %}

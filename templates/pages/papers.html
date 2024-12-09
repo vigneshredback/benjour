@@ -1,0 +1,20 @@
+{% extends 'base/base.html' %}
+
+{% block title %} Home {% endblock title %}
+
+{% block content %}
+<div class="container mt-4 mx-2">
+    {% for item in papers %}
+    <div class="mt-5 mb-5 d-flex justify-content-center flex-column align-items-left">
+        <h5 class="" style="color: #3423a6;">{{ item.title }}</h5>
+        <p class=" text-body-secondary" style="font-size: 15px;">{{ item.content }}</p>
+        <div>
+            <a href="{{ item.pdf_file.url }} " class="btn btn-outline-danger" download>Download PDF</a>
+            <a href="{{ item.word_file.url }}" class="btn btn-outline-primary" download>Download Word</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock content %}
+
+{% block script %} {% endblock script %}
